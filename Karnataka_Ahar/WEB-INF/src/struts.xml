@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts  
+Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">  
+<struts>  
+<constant name="struts.devMode" value="true" />
+<constant name="struts.multipart.maxSize" value="1000000" />
+<package name="default" extends="struts-default">  
+<global-results>
+			<result name="jsondata">
+				/jsondata.jsp
+			</result>
+</global-results>
+	<action name="mainframe">
+    		<result>/jsp/mainframe.jsp</result>
+    		
+      	</action>
+<action name="tonnege">
+<result>/jsp/booking.jsp</result>
+</action>
+<action name="login" class="india.ahar.controller.LoginCheck">
+</action>
+<action name="home">
+<result>/jsp/mainframe.jsp</result>
+</action>
+<action name="bookProduct" class="india.ahar.controller.ProductBooking">
+<result name="success">/jsp/booking.jsp</result>
+</action>
+<action name="product" class="india.ahar.controller.ProductOutsourceDetails">
+<result name="success">/jsp/ProductOutsourceDetails.jsp</result>
+</action>
+<action name="booking" class="india.ahar.controller.ProductBook">
+<result name="success">/jsp/booking.jsp</result>
+<result name="error">/jsp/error.jsp</result>
+</action>
+<action name="wareHouseReport">
+<result name="success">/jsp/InduvidualProduct.jsp</result>
+<result name="error">/jsp/error.jsp</result>
+</action>
+<action name="details" class="india.ahar.controller.getmyData">
+<result name="success">/jsp/InduvidualProduct.jsp</result>
+<result name="error">/jsp/error.jsp</result>
+</action>
+
+<action name="datedetails" class="india.ahar.controller.getDateDetails">
+<result name="success">/jsp/InduvidualProduct.jsp</result>
+<result name="error">/jsp/error.jsp</result>
+</action>
+<action name="logout">
+<result>index.jsp</result>
+</action>
+<action name="userhome">
+<result>/jsp/UserHome.jsp</result>
+</action>
+<action name="delivery" class="india.ahar.controller.ProductInwardDetails">
+<result name="success">/jsp/receive.jsp</result>
+<result name="error">/jsp/error.jsp</result>
+</action>
+<action name="location">
+<result>gps.jsp</result>
+</action>
+<action name="update" class="india.ahar.controller.CheckUpdates">
+<result name="success">/jsp/UserHome.jsp</result>
+</action>
+<action name="sellproduct">
+<result>/jsp/SellProduct.jsp</result>
+</action>
+<action name="sell" class="india.ahar.controller.SellProduct">
+<result name="success">/jsp/UserHome.jsp</result>
+</action>
+<action name="trans">
+<result>/jsp/receive.jsp</result>
+</action>
+</package>  
+
+</struts> 
